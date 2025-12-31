@@ -29,6 +29,10 @@ func main() {
 	backlog := make([]byte, 0xffff)
 	buff := make([]byte, 0xffff)
 
+	/*
+	* As a note, we can close this loop by adding a file handle that when closed shuts down the loop.
+	* You can also write to that handle, when you do it signals new elements need to be added to the pool!
+	 */
 	for {
 		fmt.Printf("Job size: %d\n", len(*poll))
 		if len(*poll) == 0 {
